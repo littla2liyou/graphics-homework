@@ -21,6 +21,7 @@ function configureCubeMap(program) {
     for (var i = 0; i < 6; i++) {
         var face = faces[i][1];
         var image = new Image();
+        image.crossOrigin = ""; // 添加此行以解决CORS问题
         image.src = faces[i][0];
         image.onload = function (cubeMap, face, image) {
             return function () {
